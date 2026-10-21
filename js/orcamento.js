@@ -4,6 +4,27 @@ const inputServico = document.querySelector("#servico");
 const inputQuantidade = document.querySelector("#quantidade");
 const resultado = document.querySelector("#resultado"); 
 
+const servicos = [
+  {nome: "Formatação", preco: 120},
+  {nome: "Limpeza", preco: 80},
+  {nome: "Instalação", preco: 50},
+]
+
+function atualizarServicos() {
+inputServico
+
+for(let i = 0; i <servicos.length; i++){
+  const opcao = document.createElement("option")
+
+  opcao.value = servicos[i].preco
+
+  opcao.textContent = `${servicos[i].nome} - R$ ${servicos[i].preco}`
+
+  inputServico.appendChild(opcao)
+ }
+}
+
+
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
 
